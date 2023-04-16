@@ -5,7 +5,7 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   plugins: [react()],
   base: '/card-game-React/',
-  assetsDir: 'assets',
+  assetsDir: 'public',
   build: {
     outDir: 'gh-pages',
   },
