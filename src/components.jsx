@@ -1,6 +1,6 @@
 // import PropTypes from 'prop-types'
-import React, { Component } from 'react'
-import './components.css'
+import React, { Component } from 'react';
+import './components.css';
 
 export default class Card extends Component {
     constructor(props) {
@@ -8,7 +8,7 @@ export default class Card extends Component {
         this.handleClick = this.handleClick.bind(this);
     }
     handleClick() {
-        this.props.handleChoice(this.props.card)
+        this.props.handleChoice(this.props.card);
 
     }
 
@@ -18,11 +18,11 @@ export default class Card extends Component {
             <div className='card' >
                 <div className={this.props.flipped ? "flipped" : ""}>
                     <img className='front' src={this.props.card.src} alt="card front" />
-                    <img className='back' src='/cover.png' alt="card back"
+                    <img className='back' src='/public/cover.png' alt="card back"
                         onClick={this.handleClick} />
                 </div>
             </div>
-        )
+        );
     }
 }
 

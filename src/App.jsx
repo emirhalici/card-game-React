@@ -1,36 +1,36 @@
-import './App.css'
-import { useState, useEffect } from 'react'
-import Card from './components'
+import './App.css';
+import { useState, useEffect } from 'react';
+import Card from './components';
 const cardImages = [
-  { "src": "/helmet-1.png", matched: false },
-  { "src": "/potion-1.png", matched: false },
-  { "src": "/sword-1.png", matched: false },
-  { "src": "/shield-1.png", matched: false },
-  { "src": "/ring-1.png", matched: false },
-  { "src": "/scroll-1.png", matched: false },
-  
-]
+  { "src": "/public/helmet-1.png", matched: false },
+  { "src": "/public/potion-1.png", matched: false },
+  { "src": "/public/sword-1.png", matched: false },
+  { "src": "/public/shield-1.png", matched: false },
+  { "src": "/public/ring-1.png", matched: false },
+  { "src": "/public/scroll-1.png", matched: false },
+
+];
 
 
 
 function App() {
-  const [cards, setCards] = useState([])
-  const [turns, setTurns] = useState(0)
-  const [choiceOne, setchoiceOne] = useState(null)
-  const [choiceTwo, setchoiceTwo] = useState(null)
+  const [cards, setCards] = useState([]);
+  const [turns, setTurns] = useState(0);
+  const [choiceOne, setchoiceOne] = useState(null);
+  const [choiceTwo, setchoiceTwo] = useState(null);
   //shuffle cards
   const shuffleCards = () => {
     const shuffledCards = [...cardImages, ...cardImages]
       .sort(() => Math.random() - 0.5)
-      .map((card) => ({ ...card, id: Math.random() }))
+      .map((card) => ({ ...card, id: Math.random() }));
 
-    setCards(shuffledCards)
+    setCards(shuffledCards);
     setTurns(0);
-  }
+  };
   //handle a choice
   const handleChoice = (card) => {
-    choiceOne ? setchoiceTwo(card) : setchoiceOne(card)
-  }
+    choiceOne ? setchoiceTwo(card) : setchoiceOne(card);
+  };
 
   useEffect(() => {
     if ((choiceTwo)) {
@@ -38,15 +38,15 @@ function App() {
         setCards(prevCards => {
           return prevCards.map(card => {
             if (card.src === choiceTwo.src) {
-              return { ...card, matched: true }
+              return { ...card, matched: true };
             } else {
-              return card
+              return card;
             }
-          })
-        })
+          });
+        });
         resetTurn();
       } else {
-        console.log("not a match")
+        console.log("not a match");
         setTimeout(() => resetTurn()
 
           , 1000);
@@ -59,7 +59,7 @@ function App() {
 
 
 
-  }, [choiceTwo])
+  }, [choiceTwo]);
 
   console.log(cards);
 
@@ -68,7 +68,7 @@ function App() {
     setchoiceOne(null);
     setchoiceTwo(null);
     setTurns(prevTurns => prevTurns + 1);
-  }
+  };
   return (
     <div className="App">
       <h1>Magic Match</h1>
@@ -88,4 +88,4 @@ function App() {
   );
 }
 
-export default App
+export default App;
