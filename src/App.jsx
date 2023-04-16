@@ -2,12 +2,12 @@ import './App.css';
 import { useState, useEffect } from 'react';
 import Card from './components';
 const cardImages = [
-  { "src": "/public/helmet-1.png", matched: false },
-  { "src": "/public/potion-1.png", matched: false },
-  { "src": "/public/sword-1.png", matched: false },
-  { "src": "/public/shield-1.png", matched: false },
-  { "src": "/public/ring-1.png", matched: false },
-  { "src": "/public/scroll-1.png", matched: false },
+  { "src": "/card-game-React/helmet-1.png", matched: false },
+  { "src": "/card-game-React/potion-1.png", matched: false },
+  { "src": "/card-game-React/sword-1.png", matched: false },
+  { "src": "/card-game-React/shield-1.png", matched: false },
+  { "src": "/card-game-React/ring-1.png", matched: false },
+  { "src": "/card-game-React/scroll-1.png", matched: false },
 
 ];
 
